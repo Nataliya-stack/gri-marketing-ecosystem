@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecosistema Digital - GRI</title>
     <link rel="stylesheet" href="./style.css">
-    <title>Ecosistema de Marketing Integrado</title>
 </head>
 <body class="min-h-screen bg-radial from-[#e6f4f1] via-[#f4f9f6] to-[#d1fae5]/40 flex flex-col items-center justify-between p-4 md:p-8 text-emerald-950 antialiased">
 
@@ -18,79 +18,179 @@
             </h1>
         </header>
 
-        <!-- Симметричная сетка 2х2 (Одинаковый масштаб для всех карточек) -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Основная сетка приложений и админки -->
+        <div class="space-y-6">
+            
+            <!-- Сетка 2х2 для четырех приложений команды -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-            <!-- БЛОК 1: ADOCAT -->
-            <div class="p-6 bg-white/40 backdrop-blur-2xl rounded-2xl border border-emerald-900/5 hover:border-emerald-500/30 hover:bg-white/60 hover:shadow-[0_12px_30px_rgba(16,185,129,0.06)] transition-all duration-300 flex flex-col justify-between gap-6 shadow-xs group">
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700/60">Educación y Captación</span>
-                        <span class="text-2xl">📚</span>
+                <!-- БЛОК 1: ADOCAT -->
+                <div class="p-6 bg-white/40 backdrop-blur-2xl rounded-2xl border border-emerald-900/5 hover:border-emerald-500/30 hover:bg-white/60 hover:shadow-[0_12px_30px_rgba(16,185,129,0.06)] transition-all duration-300 flex flex-col justify-between gap-6 shadow-xs group">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-700/60">Educación y Captación</span>
+                            <span class="text-2xl">📚</span>
+                        </div>
+                        <h2 class="font-bold text-xl text-emerald-950">¿Qué tipo de docente eres?</h2>
+                        <p class="text-sm text-emerald-900/70 leading-relaxed">
+                            Diagnóstico interactivo para la captación de socios и профессоров через анализ компетенций.
+                        </p>
                     </div>
-                    <h2 class="font-bold text-xl text-emerald-950">ADOCAT — Perfil Docente</h2>
-                    <p class="text-sm text-emerald-900/70 leading-relaxed">
-                        Diagnóstico interactivo para la captación de socios y profesores mediante un análisis profundo de competencias pedagógicas y digitales.
-                    </p>
+                    <a href="./src/adocat/adocat.html" target="_blank" class="w-full text-center text-emerald-700 font-semibold group-hover:text-white transition-all bg-emerald-500/10 group-hover:bg-emerald-600 px-5 py-3 rounded-xl border border-emerald-500/10 shadow-xs block">
+                        Abrir Aplicación &rarr;
+                    </a>
                 </div>
-                <a href="./src/adocat/adocat.html" target="_blank" class="w-full text-center text-emerald-700 font-semibold group-hover:text-white transition-all bg-emerald-500/10 group-hover:bg-emerald-600 px-5 py-3 rounded-xl border border-emerald-500/10 shadow-xs block">
-                    Abrir Propuesta &rarr;
-                </a>
+
+                <!-- БЛОК 2: EXTRANJERÍA 4 ALL -->
+                <div class="p-6 bg-white/40 backdrop-blur-2xl rounded-2xl border border-emerald-900/5 hover:border-emerald-500/30 hover:bg-white/60 hover:shadow-[0_12px_30px_rgba(16,185,129,0.06)] transition-all duration-300 flex flex-col justify-between gap-6 shadow-xs group">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-700/60">Asesoría Legal</span>
+                            <span class="text-2xl">⚖️</span>
+                        </div>
+                        <h2 class="font-bold text-xl text-emerald-950">¿Qué opción tienes para regularizar tu situación?</h2>
+                        <p class="text-sm text-emerald-900/70 leading-relaxed">
+                            Asesoría legal interactiva diseñada для помощи иностранным гражданам в легализации и получении резиденции.
+                        </p>
+                    </div>
+                    <a href="./src/extranjeria/extranjeria.html" target="_blank" class="w-full text-center text-emerald-700 font-semibold group-hover:text-white transition-all bg-emerald-500/10 group-hover:bg-emerald-600 px-5 py-3 rounded-xl border border-emerald-500/10 shadow-xs block">
+                        Abrir Aplicación &rarr;
+                    </a>
+                </div>
+
+                <!-- БЛОК 3: EMMA VALERA -->
+                <div class="p-6 bg-white/40 backdrop-blur-2xl rounded-2xl border border-emerald-900/5 hover:border-emerald-500/30 hover:bg-white/60 hover:shadow-[0_12px_30px_rgba(16,185,129,0.06)] transition-all duration-300 flex flex-col justify-between gap-6 shadow-xs group">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-700/60">Formación y Orientación</span>
+                            <span class="text-2xl">🚀</span>
+                        </div>
+                        <h2 class="font-bold text-xl text-emerald-950">¿Qué formación necesitas para mejorar tu empleabilidad?</h2>
+                        <p class="text-sm text-emerald-900/70 leading-relaxed">
+                            Recomendador inteligente de itinerarios formativos на основе вашего образования и опыта работы.
+                        </p>
+                    </div>
+                    <a href="./src/emma-valera/emma-valera.html" target="_blank" class="w-full text-center text-emerald-700 font-semibold group-hover:text-white transition-all bg-emerald-500/10 group-hover:bg-emerald-600 px-5 py-3 rounded-xl border border-emerald-500/10 shadow-xs block">
+                        Abrir Aplicación &rarr;
+                    </a>
+                </div>
+
+                <!-- БЛОК 4: TRAINING 4 YOU -->
+                <div class="p-6 bg-white/40 backdrop-blur-2xl rounded-2xl border border-emerald-900/5 hover:border-emerald-500/30 hover:bg-white/60 hover:shadow-[0_12px_30px_rgba(16,185,129,0.06)] transition-all duration-300 flex flex-col justify-between gap-6 shadow-xs group">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs font-bold uppercase tracking-wider text-emerald-700/60">Integración Estudiantil</span>
+                            <span class="text-2xl">🌍</span>
+                        </div>
+                        <h2 class="font-bold text-xl text-emerald-950">¿Qué curso te ayuda a iniciar tu proceso de integración?</h2>
+                        <p class="text-sm text-emerald-900/70 leading-relaxed">
+                            Sugeridor de cursos de integración и языковых программ поддержки для иностранных студентов.
+                        </p>
+                    </div>
+                    <a href="./src/training4you/training4you.html" target="_blank" class="w-full text-center text-emerald-700 font-semibold group-hover:text-white transition-all bg-emerald-500/10 group-hover:bg-emerald-600 px-5 py-3 rounded-xl border border-emerald-500/10 shadow-xs block">
+                        Abrir Aplicación &rarr;
+                    </a>
+                </div>
+
             </div>
 
-            <!-- БЛОК 2: EXTRANJERÍA 4 ALL -->
-            <div class="p-6 bg-white/40 backdrop-blur-2xl rounded-2xl border border-emerald-900/5 hover:border-emerald-500/30 hover:bg-white/60 hover:shadow-[0_12px_30px_rgba(16,185,129,0.06)] transition-all duration-300 flex flex-col justify-between gap-6 shadow-xs group">
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700/60">Asesoría Legal</span>
-                        <span class="text-2xl">⚖️</span>
-                    </div>
-                    <h2 class="font-bold text-xl text-emerald-950">Extranjería 4 All</h2>
-                    <p class="text-sm text-emerald-900/70 leading-relaxed">
-                        Asesoría legal interactiva diseñada para guiar a los ciudadanos extranjeros en el proceso de regularización de residencia en España.
+            <!-- ⚙️ ОБЩАЯ ПАНЕЛЬ АДМИНИСТРАТОРА (Широкая нижняя карточка) -->
+            <div class="p-6 bg-emerald-950 text-emerald-50 rounded-2xl border border-emerald-800 shadow-md flex flex-col sm:flex-row items-center justify-between gap-4 transition-all duration-300 hover:border-emerald-600">
+                <div class="text-center sm:text-left space-y-1">
+                    <h3 class="font-bold text-lg flex items-center justify-center sm:justify-start gap-2">
+                        <span>⚙️</span> Panel de Administración Central
+                    </h3>
+                    <p class="text-xs text-emerald-300/80">
+                        Área protegida para el Product Owner. Gestión de leads, estadísticas globales y exportación de datos.
                     </p>
                 </div>
-                <a href="./src/extranjeria/extranjeria.html" target="_blank" class="w-full text-center text-emerald-700 font-semibold group-hover:text-white transition-all bg-emerald-500/10 group-hover:bg-emerald-600 px-5 py-3 rounded-xl border border-emerald-500/10 shadow-xs block">
-                    Iniciar Asesoría &rarr;
-                </a>
-            </div>
-
-            <!-- БЛОК 3: EMMA VALERA -->
-            <div class="p-6 bg-white/40 backdrop-blur-2xl rounded-2xl border border-emerald-900/5 hover:border-emerald-500/30 hover:bg-white/60 hover:shadow-[0_12px_30px_rgba(16,185,129,0.06)] transition-all duration-300 flex flex-col justify-between gap-6 shadow-xs group">
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700/60">Orientación Profesional</span>
-                        <span class="text-2xl">🚀</span>
-                    </div>
-                    <h2 class="font-bold text-xl text-emerald-950">Emma Valera</h2>
-                    <p class="text-sm text-emerald-900/70 leading-relaxed">
-                        Recomendador inteligente de itinerarios formativos personalizados basados en tus estudios previos y metas de carrera profesionales.
-                    </p>
-                </div>
-                <a href="./src/emma-valera/emma-valera.html" target="_blank" class="w-full text-center text-emerald-700 font-semibold group-hover:text-white transition-all bg-emerald-500/10 group-hover:bg-emerald-600 px-5 py-3 rounded-xl border border-emerald-500/10 shadow-xs block">
-                    Probar Recomendador &rarr;
-                </a>
-            </div>
-
-            <!-- БЛОК 4: TRAINING 4 YOU -->
-            <div class="p-6 bg-white/40 backdrop-blur-2xl rounded-2xl border border-emerald-900/5 hover:border-emerald-500/30 hover:bg-white/60 hover:shadow-[0_12px_30px_rgba(16,185,129,0.06)] transition-all duration-300 flex flex-col justify-between gap-6 shadow-xs group">
-                <div class="space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-bold uppercase tracking-wider text-emerald-700/60">Integración Estudiantil</span>
-                        <span class="text-2xl">🌍</span>
-                    </div>
-                    <h2 class="font-bold text-xl text-emerald-950">Training 4 You</h2>
-                    <p class="text-sm text-emerald-900/70 leading-relaxed">
-                        Sugeridor de cursos de integración, apoyo lingüístico y programas de adaptación para estudiantes internacionales en una nueva cultura.
-                    </p>
-                </div>
-                <a href="./src/training4you/training4you.html" target="_blank" class="w-full text-center text-emerald-700 font-semibold group-hover:text-white transition-all bg-emerald-500/10 group-hover:bg-emerald-600 px-5 py-3 rounded-xl border border-emerald-500/10 shadow-xs block">
-                    Explorar Cursos &rarr;
-                </a>
+                <button id="open-admin-btn" class="w-full sm:w-auto font-bold text-xs uppercase tracking-wider bg-emerald-600 hover:bg-emerald-500 transition-colors text-white px-6 py-3.5 rounded-xl shadow-xs cursor-pointer">
+                    Acceder al Panel &rarr;
+                </button>
             </div>
 
         </div>
     </div>
+
+       <!-- 🔐 КРАСИВОЕ МОДАЛЬНОЕ ОКНО АДМИНКИ -->
+<div id="admin-modal" class="fixed inset-0 bg-emerald-950/40 backdrop-blur-md flex items-center justify-center p-3 md:p-6 opacity-0 pointer-events-none transition-all duration-300 z-50">
+    
+    <!-- Карточка окна (Автоматическая высота, скролл только внутри контента) -->
+    <div class="w-full max-w-4xl bg-emerald-900/95 border border-white/10 rounded-2xl p-5 md:p-8 shadow-2xl flex flex-col max-h-[90vh] text-white transform scale-95 transition-all duration-300" id="modal-card">
+        
+        <!-- Шапка модалки (Фиксированная) -->
+        <div class="flex items-center justify-between border-b border-white/10 pb-4 shrink-0">
+            <div class="flex items-center gap-3">
+                <span class="text-2xl">⚙️</span>
+                <div>
+                    <h3 class="font-bold text-base md:text-lg">Panel de Control General</h3>
+                    <p class="text-xs text-emerald-300/70">Gestión centralizada de leads del ecosistema</p>
+                </div>
+            </div>
+            <button id="close-modal-btn" class="w-8 h-8 flex items-center justify-center rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white/70 hover:text-white transition-colors cursor-pointer text-sm font-bold">&times;</button>
+        </div>
+
+        <!-- Контейнер скролла (Скроллится только этот блок, если лидов много) -->
+        <div class="overflow-y-auto flex-1 pr-1 -mr-1 space-y-6 py-4">
+
+            <!-- ФОРМА ВХОДА -->
+            <div id="admin-login-block" class="max-w-sm mx-auto text-center py-8 space-y-4">
+                <p class="text-sm text-emerald-200/80">Introduzca la contraseña para acceder:</p>
+                <div class="flex flex-col sm:flex-row gap-2 justify-center">
+                    <input type="password" id="admin-password-input" placeholder="Contraseña..." class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-400 focus:bg-white/10 transition-all text-white placeholder-white/30 w-full">
+                    <button id="submit-password-btn" class="bg-emerald-500 hover:bg-emerald-400 font-bold text-xs uppercase tracking-wider text-emerald-950 px-5 py-3 rounded-xl transition-colors cursor-pointer shrink-0">Entrar</button>
+                </div>
+                <p id="login-error-msg" class="text-xs text-rose-400 hidden font-semibold">⚠️ Contraseña incorrecta.</p>
+            </div>
+
+            <!-- ТАБЛИЦА И УПРАВЛЕНИЕ -->
+            <div id="admin-content-block" class="hidden space-y-6">
+                
+                <!-- Панель фильтров и экспорта -->
+                <div class="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 bg-white/5 p-4 rounded-xl border border-white/5 shrink-0">
+                    <!-- Идеальная адаптивная сетка кнопок (все по центру и одной ширины на мобильных) -->
+                    <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 w-full lg:w-auto" id="table-filters">
+                        <button class="col-span-2 sm:col-span-1 px-3 py-2.5 text-xs font-bold rounded-lg bg-emerald-600 text-white border border-white/10 cursor-pointer text-center" data-filter="all">Todos</button>
+                        <button class="px-3 py-2.5 text-xs font-bold rounded-lg bg-white/5 text-emerald-200 hover:bg-white/10 border border-white/5 cursor-pointer text-center truncate" data-filter="adocat">📚 ADOCAT</button>
+                        <button class="px-3 py-2.5 text-xs font-bold rounded-lg bg-white/5 text-emerald-200 hover:bg-white/10 border border-white/5 cursor-pointer text-center truncate" data-filter="extranjeria">⚖️ Legal</button>
+                        <button class="px-3 py-2.5 text-xs font-bold rounded-lg bg-white/5 text-emerald-200 hover:bg-white/10 border border-white/5 cursor-pointer text-center truncate" data-filter="emma">🚀 Emma</button>
+                        <button class="px-3 py-2.5 text-xs font-bold rounded-lg bg-white/5 text-emerald-200 hover:bg-white/10 border border-white/5 cursor-pointer text-center truncate" data-filter="training">🌍 Training</button>
+                    </div>
+                    <button id="export-csv-btn" class="bg-white text-emerald-950 px-4 py-3 lg:py-2 rounded-lg text-xs font-extrabold hover:bg-emerald-100 transition-colors cursor-pointer flex items-center justify-center gap-1.5 shadow-xs w-full lg:w-auto shrink-0">
+                        📥 Exportar CSV
+                    </button>
+                </div>
+
+                <!-- 🖥️ Вариант для мониторов: Классическая таблица (скрывается на мобильных) -->
+                <div class="hidden md:block rounded-xl border border-white/10 bg-emerald-950/30 overflow-hidden">
+                    <table class="w-full text-left border-collapse text-sm">
+                        <thead>
+                            <tr class="bg-white/5 border-b border-white/10 text-xs font-bold uppercase tracking-wider text-emerald-300">
+                                <th class="p-4">Fecha</th>
+                                <th class="p-4">Nombre</th>
+                                <th class="p-4">Email</th>
+                                <th class="p-4">Teléfono</th>
+                                <th class="p-4">Origen</th>
+                                <th class="p-4">Respuestas</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leads-table-body" class="divide-y divide-white/5">
+                            <!-- Строки для десктопа -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- 📱 Вариант для мобильных: Список вертикальных карточек (скрывается на мониторах) -->
+                <div id="leads-mobile-list" class="block md:hidden space-y-4">
+                    <!-- Сюда JS будет рендерить карточки вместо строк таблицы -->
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
     <!-- Легкий футер -->
     <footer class="w-full text-center py-6 text-xs text-emerald-950/40 font-semibold tracking-wide">
