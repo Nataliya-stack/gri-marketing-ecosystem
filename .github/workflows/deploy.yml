@@ -21,18 +21,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2 
+        uses: actions/checkout@v4.2.2
       
       - name: Install pnpm
-        uses: pnpm/action-setup@v4.1.0 
+        uses: pnpm/action-setup@v4.1.0
         with:
           version: 9
           
       - name: Set up Node
-        uses: actions/setup-node@v4.1.0 
+        uses: actions/setup-node@v4.1.0
+        env:
+          # Флаг принудительно разрешает использовать Node 24 без вызова внутренних ошибок
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
         with:
           node-version: 24
-          cache: 'pnpm'
+          # ВРЕМЕННО комментируем кэш, чтобы сбросить ошибку 400 и очистить сборку
+          # cache: 'pnpm' 
           
       - name: Install dependencies
         run: pnpm install
@@ -44,11 +48,10 @@ jobs:
         run: pnpm build
         
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3.0.1 
+        uses: actions/upload-pages-artifact@v3.0.1
         with:
           path: './docs'
           
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4.0.5 
-
+        uses: actions/deploy-pages@v4.0.5
