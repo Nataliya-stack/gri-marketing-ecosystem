@@ -23,6 +23,7 @@
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.2",
     "glob": "^13.0.6",
+    "tailwind-scrollbar": "^4.0.2",
     "tailwindcss": "^4.0.0",
     "vite": "^8.1.3"
   },

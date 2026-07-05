@@ -1,3 +1,291 @@
-@import "tailwindcss";
 @source "../../index.html";
 @source "../**/*.html";
+/* ==========================================================================
+   1. CORE DE TAILWIND Y PLUGINS
+   ========================================================================== */
+@import "tailwindcss";
+@reference "tailwindcss"; 
+@plugin "@tailwindcss/typography";
+@plugin "tailwind-scrollbar";
+
+/* ==========================================================================
+   2. CONFIGURACIÓN DEL TEMA (Colores, Fuentes, Variables)
+   ========================================================================== */
+@theme {
+  --color-brand-primary: #059669;
+  --color-brand-success: #10b981;
+  --color-brand-dark: #022c22;
+  --color-brand-light: #f4f9f6;
+
+  /* Наш шрифт */
+  --font-inclusive: 'Inclusive Sans', system-ui, -apple-system, sans-serif;
+
+  /* ДОБАВЬТЕ ЭТУ СТРОКУ 🎉 */
+  --font-weight-bold: 700; 
+  --font-weight-black: 900;
+
+  --animate-fade-in: fade-in 0.3s ease-out;
+}
+
+/* ==========================================================================
+   3. PERSONALIZACIÓN DE LA BASE (Etiquetas HTML Nativas)
+   ========================================================================== */
+@layer base {
+  body {
+    background: radial-gradient(circle, #e6f4f1 0%, #f4f9f6 50%, rgba(21, 250, 165, 0.1) 100%);
+    color: #064e3b;
+    font-family: var(--font-inclusive);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h1 { @apply text-4xl md:text-5xl font-black tracking-tight text-emerald-900 drop-shadow-xs; }
+  h2 { @apply text-xl md:text-2xl font-bold text-emerald-950 leading-snug; }
+  h3 { @apply text-base md:text-lg font-bold text-emerald-950; }
+
+  /* Общие инпуты для ВСЕХ форм (включая ввод пароля в админке) */
+  input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(5, 150, 105, 0.1);
+    color: #064e3b;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-brand-primary);
+      background-color: #ffffff;
+      box-shadow: 0 0 0 2px rgba(5, 150, 105, 0.1);
+    }
+  }
+
+  input[type="checkbox"] {
+    @apply accent-emerald-600 rounded cursor-pointer mt-1;
+  }
+}
+/* ==========================================================================
+   5. COMPONENTES Y UTILIDADES PROPIAS (Clases Reutilizables)
+   ========================================================================== */
+
+/* --- 📚 БЛОК КОМПОНЕНТОВ ДЛЯ СТРАНИЦ КВИЗОВ (ADOCAT и др.) --- */
+
+@utility quiz-container-bento {
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  @apply backdrop-blur-xl; /* Исправлено: заменяет backdrop-filter: blur(24px) */
+  border-radius: 1rem;
+  border: 1px solid rgba(2, 44, 34, 0.05);
+  box-shadow: var(--shadow-xs);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--color-brand-primary);
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  
+  &:hover { background-color: #047857; }
+  &:active { transform: scale(0.98); }
+}
+
+@utility quiz-btn-option {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: #ffffff;
+  color: #064e3b;
+  font-weight: 700;
+  font-size: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-align: center;
+
+  &:hover {
+    background-color: var(--color-brand-primary);
+    color: #ffffff;
+    border-color: var(--color-brand-primary);
+  }
+}
+
+@utility btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #047857;
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+
+  &:hover { 
+    background-color: rgba(255, 255, 255, 0.8); 
+    color: #064e3b; 
+  }
+}
+
+
+/* --- ⚙️ БЛОК КОМПОНЕНТОВ ЦЕНТРАЛЬНОЙ АДМИНКИ (Для index.html) --- */
+
+/* Кнопки-фильтры админки */
+@utility filter-btn {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #a7f3d0; 
+  transition: all 0.2s ease;
+
+  &[data-active="true"] {
+    background-color: #10b981;
+    color: #ffffff;
+    border-color: #10b981;
+  }
+}
+
+@utility admin-table-row {
+  @apply hover:bg-white/5 transition-colors;
+  
+  & td { @apply p-4; }
+  & .td-date { @apply font-medium text-emerald-200; }
+  & .td-name { @apply text-white font-semibold; }
+  & .td-text { @apply text-emerald-100; }
+  & .td-badge { @apply px-2 py-1 text-xs font-bold rounded-md bg-emerald-500/20 text-emerald-300; }
+  & .td-answers { @apply text-xs text-emerald-300/90 font-medium; } 
+}
+
+/* Карточка мобильной версии лида */
+@utility admin-mobile-card {
+  @apply p-4 bg-white/5 border border-white/10 rounded-xl space-y-3 text-sm;
+  
+  & .card-header { @apply flex items-center justify-between border-b border-white/5 pb-2; }
+  & .card-date { @apply text-xs font-bold text-emerald-300/70; }
+  & .card-badge { @apply px-2 py-0.5 text-[10px] font-black rounded bg-emerald-500/20 text-emerald-300 tracking-wider; }
+  & .card-name { @apply font-bold text-white text-base; }
+  & .card-field { @apply text-emerald-200/90 flex flex-wrap gap-1; }
+  & .card-field-label { @apply text-emerald-400/60 font-medium; }
+  & .card-answers-block { @apply p-3 bg-emerald-950/40 rounded-lg border border-white/5; }
+  & .card-answers-title { @apply text-[11px] font-bold text-emerald-400/80 mb-1; }
+  & .card-answers-text { @apply text-xs text-emerald-100/90 leading-relaxed font-medium; }
+}
+
+@utility no-scrollbar {
+  @apply scrollbar-none; 
+}
+
+@utility text-glow {
+  text-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
+}
+
+/* Карточка приложения в главном хабе */
+@utility app-card {
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.4);
+  @apply backdrop-blur-2xl rounded-2xl border border-emerald-900/5 transition-all duration-300 flex flex-col justify-between gap-6 shadow-xs;
+
+  &:hover {
+    border-color: rgba(16, 185, 129, 0.3);
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 12px 30px rgba(16, 185, 129, 0.06);
+  }
+}
+
+/* Кнопка внутри карточки */
+@utility app-card-btn {
+  width: 100%;
+  text-align: center;
+  color: #047857; /* text-emerald-700 */
+  font-weight: 600;
+  background-color: rgba(16, 185, 129, 0.1);
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(16, 185, 129, 0.1);
+  @apply shadow-xs block transition-all;
+
+  .group:hover & {
+    background-color: #059669; /* bg-emerald-600 */
+    color: #ffffff;
+  }
+}
+
+/* Прогресс-бар на основе CSS-переменной из JS */
+#progress-bar {
+  width: var(--quiz-progress, 0%);
+}
+
+/* Умная адаптивная сетка вариантов квиза */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+@media (min-width: 768px) {
+  .options-grid[data-options-count="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .options-grid[data-options-count="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Стилизация состояний кнопок квиза через встроенные селекторы Tailwind v4 */
+.quiz-btn-option {
+  /* Стили для выбранной пользователем кнопки */
+  &[data-selected="true"] {
+    background-color: var(--color-brand-primary);
+    color: #ffffff;
+    border-color: var(--color-brand-primary);
+    font-weight: 900;
+    box-shadow: var(--shadow-md);
+  }
+
+  /* Стили для остальных кнопок, которые заблокировались после клика */
+  &:disabled {
+    background-color: rgba(243, 244, 246, 0.6); /* bg-gray-100/60 */
+    color: #9ca3af; /* text-gray-400 */
+    pointer-events: none;
+    opacity: 0.4;
+    border-color: transparent;
+  }
+}
+
+/* Элементы списка ответов внутри модального окна */
+.modal-answer-item {
+  @apply p-3 bg-emerald-950/40 rounded-xl border border-white/5 space-y-1;
+}
+
+.modal-answer-q {
+  @apply text-xs font-bold text-emerald-400/80 uppercase tracking-wide;
+}
+
+.modal-answer-a {
+  @apply text-sm text-emerald-100 font-medium leading-relaxed;
+}
+
+/* Включаем плавный скролл для списка ответов */
+#ans-modal-container {
+  scroll-behavior: smooth; /* Стандартное свойство, линтер будет доволен 🎉 */
+}
+
+
+
+
+

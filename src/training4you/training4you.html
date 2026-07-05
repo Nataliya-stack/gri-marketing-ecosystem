@@ -4,42 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Training 4 You - Proyecto GRI</title>
-    <!-- Подключаем наш главный файл стилей из корня -->
     <link rel="stylesheet" href="../../style.css">
 </head>
-<!-- Мягкий, глубокий благородный изумрудный фон с легким свечением в центре -->
-<body class="min-h-screen bg-radial from-[#065f46] to-[#022c22] text-[#e6f4f1] flex flex-col items-center justify-center p-6 md:p-12 antialiased">
+<body>
 
-    <!-- Основной контейнер, который центрирует абсолютно всё внутри себя -->
-    <main class="w-full max-w-2xl mx-auto text-center space-y-8">
+    <!-- Основной контейнер, который центрирует всё внутри себя -->
+    <main class="w-full max-w-2xl mx-auto text-center space-y-8 py-6">
         
         <!-- Стеклянная иконка-акцент с внутренней тенью -->
-        <div class="inline-flex w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-md border border-white/10 items-center justify-center text-3xl mx-auto shadow-inner">
+        <div class="inline-flex w-16 h-16 rounded-2xl bg-white border border-emerald-500/10 items-center justify-center text-3xl mx-auto shadow-xs">
             🌍
         </div>
 
-        <!-- Заголовок приложения строго по PDF -->
+        <!-- Заголовок приложения -->
         <div class="space-y-3">
-            <span class="text-xs font-bold uppercase tracking-widest text-[#d1fae5]/60 block">Alumno 4 – TRAINING 4 YOU</span>
-            <h1 class="text-4xl md:text-5xl font-black tracking-tight text-white drop-shadow-md leading-tight">
-                ¿Qué curso te ayuda a iniciar tu proceso de integración?
-            </h1>
+            <span class="text-xs font-bold uppercase tracking-widest text-emerald-700/60 block">Alumno 4 – TRAINING 4 YOU</span>
+            <h1>¿Qué curso te ayuda a iniciar tu proceso de integración?</h1>
         </div>
 
         <!-- Отцентрованное описание цели бизнеса -->
-        <p class="text-lg text-[#d1fae5]/80 max-w-xl mx-auto leading-relaxed font-medium">
+        <p class="text-lg text-emerald-900/80 max-w-xl mx-auto leading-relaxed font-medium">
             Sugeridor inteligente diseñado para captar alumnos extranjeros analizando su idioma, nivel de español y situación documental.
         </p>
 
-        <!-- Красивая интерактивная плашка (эффект матового стекла) -->
-        <div class="p-8 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 shadow-xl text-[#d1fae5]/90 text-sm">
-            <p class="font-semibold text-base mb-2 text-white">⚙️ Zona de Desarrollo</p>
-            Aquí se desarrollará el formulario dinámico y la lógica de LocalStorage para Training 4 You.
+        <!-- Фирменная интерактивная плашка (Bento-контейнер) -->
+        <div class="quiz-container-bento">
+            <p class="font-bold text-base text-emerald-950">⚙️ Zona de Desarrollo</p>
+            <p class="text-sm text-emerald-900/70 leading-relaxed text-left bg-white/50 p-5 rounded-xl border border-emerald-500/5">
+                Aquí se desarrollará el formulario dinámico y la lógica de LocalStorage para Training 4 You.
+            </p>
         </div>
 
-        <!-- Кнопка возврата на главную в стиле матового стекла -->
+        <!-- Кнопка возврата на главную в стиле экосистемы -->
         <div class="pt-6">
-            <a href="../../index.html" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#d1fae5] hover:text-white transition-colors bg-white/10 hover:bg-white/20 px-5 py-3 rounded-xl border border-white/10 shadow-xs">
+            <a href="../../index.html" class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-700 hover:text-emerald-900 transition-colors bg-white px-5 py-3 rounded-xl border border-emerald-500/10 shadow-xs">
                 &larr; Volver al Ecosistema
             </a>
         </div>
@@ -49,3 +47,4 @@
     <script type="module" src="./training4you.js"></script>
 </body>
 </html>
+
