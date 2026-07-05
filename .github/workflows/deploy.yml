@@ -13,11 +13,6 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
-# Глобальные переменные для отключения строгих проверок Node на сервере GitHub
-env:
-  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
 jobs:
   deploy:
     environment:
@@ -26,33 +21,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v4
       
       - name: Install pnpm
-        uses: pnpm/action-setup@v4.1.0
+        uses: pnpm/action-setup@v4
         with:
           version: 9
           
       - name: Set up Node
-        uses: actions/setup-node@v4.1.0
+        uses: actions/setup-node@v4
         with:
           node-version: 24
           
       - name: Install dependencies
-        # Добавили флаг игнорирования замороженных lock-файлов для Node 24 🎉
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install
         
-      - name: Build
+      - name: Clean and Build
         env:
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
-        run: pnpm build
+        # Мы принудительно удаляем старую docs перед билдом, чтобы избежать конфликта файлов 🎉
+        run: |
+          rm -rf docs
+          pnpm build
         
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3.0.1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: './docs'
           
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4.0.5
+        uses: actions/deploy-pages@v4
